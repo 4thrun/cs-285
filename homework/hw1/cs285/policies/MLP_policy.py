@@ -109,6 +109,7 @@ class MLPPolicySL(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
             itertools.chain([self.logstd], self.mean_net.parameters()),
             self.learning_rate
         )
+        self.loss = nn.MSELoss()
 
     def save(self, filepath):
         """
@@ -148,10 +149,14 @@ class MLPPolicySL(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
         actions = ptu.from_numpy(actions) 
         self.optimizer.zero_grad()  
         predicted_actions = self.forward(observations) 
-        loss = nn.MSELoss(predicted_actions, actions)
+        loss = self.loss(predicted_actions, actions)
         loss.backward() 
         self.optimizer.step() 
         return {
             # You can add extra logging information here, but keep this line
             'Training Loss': ptu.to_numpy(loss),
         }
+    
+    def get_action(self, obs: np.ndarray) -> np.ndarray:
+        action = self.forward(ptu.from_numpy(obs)) 
+        return ptu.to_numpy(action)
