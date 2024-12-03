@@ -34,7 +34,7 @@ def sample_trajectory(env, policy, max_path_length, render=False):
     
         # TODO use the most recent ob to decide what to do
         ac = policy.get_action(ob) # HINT: this is a numpy array
-        ac = ac[0]
+        # ac = ac[0]
         print(f"ac.shape: {ac.shape}")
         print(f"ob.shape: {ob.shape}")
 
