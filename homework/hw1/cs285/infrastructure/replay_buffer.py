@@ -18,10 +18,10 @@ class ReplayBuffer(object):
         self.terminals = None
 
     def __len__(self):
-        if self.obs:
-            return self.obs.shape[0]
-        else:
+        if self.obs is None:
             return 0
+        else:
+            return self.obs.shape[0]
 
     def add_rollouts(self, paths, concat_rew=True):
 
