@@ -2,7 +2,7 @@
 
 ## 1 Analysis 
 
-To be completed. (┬┬﹏┬┬)
+To be filled\. 
 
 ## 2 Editing Code 
 
@@ -42,8 +42,6 @@ $env:PYTHONPATH = "$env:PYTHONPATH;path\\to\\homework\\hw1"
 ```
 
 ### 1 Results
-
-![image-20241204204351753](./assets/image-20241204204351753.png) 
 
 #### Ant
 
@@ -144,6 +142,10 @@ Initial_DataCollection_AverageReturn : 5383.310325177668
 ```
 
 ![img](./assets/individualImagets=1733282059.gif)
+
+And `EvalAverage_Return` is given below:                          
+
+![image-20241204204351753](./assets/image-20241204204351753.png)
 
 ### 2 Comparation between Hyperparameters
 
