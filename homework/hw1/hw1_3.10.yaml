@@ -1,4 +1,4 @@
-name: hw1-3.10
+name: hw1_3.10
 channels:
   - fastai
   - defaults
